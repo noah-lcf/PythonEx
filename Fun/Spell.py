@@ -16,7 +16,7 @@ def train(features):
     return model
 
 
-NWORDS = train(words(file('big.txt').read()))
+NWORDS = train(words(file('../big.txt').read()))
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -47,9 +47,10 @@ def correct(word):
 
 if __name__ == '__main__':
     a = {1, 2, 3}
+    b = {3, 5, 6}
     c = {}
-    b = {3, 5, 6},
-    print a | b, ,
     print type(a)
+    print type(b)
     print type(c)
+    print a & b,
     print correct("spel")

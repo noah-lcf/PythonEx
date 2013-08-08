@@ -15,6 +15,7 @@ class Entity(object):
 
 class Node(object):
     '''''B树的节点'''
+
     def __init__(self):
         self.parent = None
         self.entitys = []
