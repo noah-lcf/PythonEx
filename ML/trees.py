@@ -119,7 +119,6 @@ def getTreeDepth(myTree):
 
         if classList.count(classList[0]) == len(classList):  # 类别全部相同停止继续划分
             return classList[0]
-
         if len(dataSet[0]) == 1:  # 遍历完所有特征时返回出现次数最多的
             return majorityCnt(classList)
         bestFeat = chooseBestFeatureToSplit(dataSet)
@@ -132,6 +131,8 @@ def getTreeDepth(myTree):
             subLabels = labels[:]
             myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels)
         return myTree
+
+
 
 
     if __name__ == '__main__':
