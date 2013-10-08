@@ -20,7 +20,8 @@ b1 = A("bbb")
 print a == b
 aSet = {a, a1,a}
 print aSet
-
+aSet.remove(a)
+print aSet
 
 def contain(list, target):
     for i in list:
