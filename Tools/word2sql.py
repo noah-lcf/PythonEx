@@ -10,7 +10,7 @@ Created on 2013年10月10日
   3. 格式为 1. 或【1】或‘F’或 Bit开头的，扩充到上一个field行做注释
   4. 格式为Index:field+field,field 为索引,索引间用,格开，复合索引用+格开
   5. 不能匹配上述几种情况的行，全部删除
-  6. 如果表名包含HIS，放到USE_DB_HIS库中
+  6. 如果表名包含HIS，放到HIS库中
  
 @author: NOAH
 '''
