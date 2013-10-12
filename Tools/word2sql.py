@@ -31,7 +31,6 @@ def preDeal(lines):
         line=lines[i].encode("utf-8").strip()
         if (re.match(r"^\d+", line) and not re.match(r"^\d\.\d\.\d+", line)) or re.match(r"^(【\d】)|(‘.+’)|(Bit.+).*$", line):
             commentLines.append(i)
-    print commentLines
     index = 0
     appendIndex = 0
     for i in commentLines:
