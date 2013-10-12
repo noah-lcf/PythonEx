@@ -53,7 +53,7 @@ def preDeal(lines):
     return lines2
 
 class table(object):
-    def __init__(self, name, comment, indexes=[], rows=[]):
+    def __init__(self, name, comment):
         self.name = name
         self.comment = comment
         self.rows = []
