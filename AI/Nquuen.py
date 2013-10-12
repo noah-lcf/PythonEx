@@ -33,6 +33,9 @@ def printPrettyBoard(board):
             print '\t\033[0m',
         print "\n"
 
+def findCells2Match(posX,posY):
+    cells=[]
+
 
 if __name__ == '__main__':
     # testStat = np.arange(1, 9)
