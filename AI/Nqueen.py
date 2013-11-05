@@ -14,7 +14,7 @@ def getBlankChessBoard():
     return board & 1
 
 
-def getBoradStatus(array):
+def getBoardStatus(array):
     board = getBlankChessBoard()
     for i in range(0, len(array)):
         board[i][array[i] - 1] = CHESS_MARK
@@ -101,6 +101,6 @@ if __name__ == '__main__':
     # np.random.shuffle(testStat)
     testStat = [3, 6, 1, 7, 5, 4, 2, 8]
     print "testStat:%s" % str(testStat)
-    boardStatus = getBoradStatus(testStat)
+    boardStatus = getBoardStatus(testStat)
     print printPrettyBoard(boardStatus)
     print getConfictCells(boardStatus)
