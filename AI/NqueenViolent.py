@@ -80,27 +80,26 @@ def prettyprint_board(board):
 
 def main():
     print "Running the backtracking and non-backtracing implementations"
-    for i in range(4, 9):
+    for i in range(10,20):
+        print
         print(str(i) + " Queens")
 
-        board = create_board(i)
-        start = time.clock()
-        solve_without_backtracking(board)
-        end = time.clock()
-        print("Without backtracking: " + str(end-start))
+#         board = create_board(i)
+#         start = time.clock()
+#         solve_without_backtracking(board)
+#         end = time.clock()
+#         print("Without backtracking: " + str(end-start))
 
         board = create_board(i)
         start = time.clock()
         solns = solve_with_backtracking(board)
         end = time.clock()
-        print("With backtracking:    " + str(end-start) + "\n")
-
-        print
+        print("With backtracking:    " + str(end-start) )
         print "%d solutions:" % len(solns)
-        for soln in solve_with_backtracking(board):
-            print soln
-            prettyprint_board(soln)
-            print
+#         for soln in solve_with_backtracking(board):
+#             print soln
+#             prettyprint_board(soln)
+#             print
 
 
 if __name__ == "__main__":
