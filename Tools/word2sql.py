@@ -118,6 +118,10 @@ def getSql(tables):
     return sql
 
 
+
+
+
+
 if __name__ == '__main__':
     #user_profile service_object_profile device_profile vas_profile product_profile system_profile 
     f_name = "all_profile"
