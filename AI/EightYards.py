@@ -16,13 +16,6 @@ def isComplete(stat):
     return np.all(stat == targetStat)  # 全为真时返回true
 
 
-def contain(list, target):
-    for i in list:
-        if np.all(i == target):
-            return True
-    return False
-
-
 def getIndex(num, stat):
     """
     获得数字的位置
@@ -131,7 +124,7 @@ if __name__ == '__main__':
     # testStat = np.arange(9)
     # np.random.shuffle(testStat)
     # testStat = np.reshape(testStat, (3, 3))
-    # testStat = np.array([[1, 2, 0], [3, 4, 5], [6, 7, 8]]) # 有些情况是无解的？
+    # testStat = np.array([[1, 2, 0], [3, 4, 5], [6, 7, 8]]) # 有些情况是无解的!
     testStat = np.array([[7, 2, 4], [5, 0, 6], [8, 3, 1]])
     print "testStat\n" + str(testStat)
     walkedNodes = []

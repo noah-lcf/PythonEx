@@ -84,6 +84,7 @@ def getConfictCells(board):
     for columnIndex in range(0, len(board)):
         for rowIndex in range(0, len(board[columnIndex])):
             if board[columnIndex][rowIndex] == -1:
+                
                 matchCell = [[rowIndex, columnIndex]]
                 cells_l, cells_r = findCells2MatchLean(rowIndex, columnIndex)
                 cells_v, cells_h = findCells2MatchStraight(rowIndex, columnIndex)

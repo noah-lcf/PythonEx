@@ -1,4 +1,5 @@
 # coding: UTF-8
+from abc import ABCMeta
 __author__ = 'Noah'
 from collections import defaultdict
 import numpy as np
@@ -12,6 +13,13 @@ class A(object):
         return self.value == other.value
 
 
+class B():
+    __metaclass__ = ABCMeta
+        
+        
+        
+b=B()
+print b
 a = A("aaa")
 a1 = A("aaa")
 print a == a1
