@@ -17,8 +17,18 @@ def getBlankChessBoard():
 def getBoardStatus(array):
     board = getBlankChessBoard()
     for i in range(0, len(array)):
-        board[i][array[i] - 1] = CHESS_MARK
+        board[array[i] - 1][i] = CHESS_MARK
     return board
+
+def getBoardArray(board):
+    stat=[]
+    for i in range(0,len(board)):
+        ary=board[i]
+        for j in range(0,len(ary)):
+            if ary[j]==CHESS_MARK:
+                stat.append(j+1)
+    return stat         
+        
 
 
 def printPrettyBoard(board):
@@ -30,11 +40,21 @@ def printPrettyBoard(board):
             else:
                 print '\t\033[1;37;46m',
             if k == -1:
-                print "*",
+                print "X",
             print '\t\033[0m',
         print "\n"
 
-
+def printPrettyBoard2(board):
+    print "--------------------------------\n"
+    for i in range(0, len(board)):
+        for j in range(len(board[i])):
+            k = board[i][j]
+            if k == -1:
+                print " X ",
+            else:print " " + str(k) + " ",
+        print "\n"
+    print "--------------------------------\n"
+    
 def findCells2MatchStraight(posX, posY):
     cells_vertical = []
     cells_horizontal = []
@@ -50,7 +70,7 @@ def findCells2MatchLean(posX, posY):
     '''
     cells_left = []
     cells_right = []
-    #左向
+    # 左向
     indexX = posX
     indexY = posY
     while indexX < 7 and indexY > 0:
@@ -63,7 +83,7 @@ def findCells2MatchLean(posX, posY):
         indexX -= 1
         indexY += 1
         cells_left.append([indexX, indexY])
-        #右向
+        # 右向
     indexX = posX
     indexY = posY
     while indexX < 7 and indexY < 7:
@@ -90,18 +110,60 @@ def getConfictCells(board):
                 cells_v, cells_h = findCells2MatchStraight(rowIndex, columnIndex)
                 cells = cells_l + cells_r + cells_v + cells_h
                 for cell in cells:
-                    if (board[cell[1]][cell[0]]) == -1 and cell[1] > columnIndex: # 去掉右边判断，可以在find2Match里面进行判断直接不返回左边的
+                    if (board[cell[1]][cell[0]]) == -1 and cell[1] > columnIndex:  # 去掉右边判断，可以在find2Match里面进行判断直接不返回左边的
                         matchCell += [[cell[0], cell[1]]]
                 if len(matchCell) > 1:
                     matchCells.append(matchCell)
-    return matchCells
+    return matchCells, sum([len(i) for i in matchCells])
 
+
+
+        
+
+def getNextStats(stat):
+    stats = []
+    for i in range(0, 8):
+        val = stat[i]
+        for j in range(1, 9):
+            if j == val:continue
+            statTmp = list(stat)
+            statTmp[i] = j
+            stats.append(statTmp)
+    return stats
+
+
+def getNextMin(stat):
+    stats=getNextStats(stat)
+    minConfictCount = 10000
+    minStat=[]
+    for nStat in stats:
+        nBoardStatus = getBoardStatus(nStat)
+        confictCells, confictCount = getConfictCells(nBoardStatus)
+        if confictCount < minConfictCount:
+            minConfictCount = confictCount
+            minStat=nBoardStatus
+    return minStat,minConfictCount
 
 if __name__ == '__main__':
     # testStat = np.arange(1, 9)
     # np.random.shuffle(testStat)
-    testStat = [3, 6, 1, 7, 5, 4, 2, 8]
+    testStat = [5, 6, 7, 4, 5, 6, 7, 6]
     print "testStat:%s" % str(testStat)
     boardStatus = getBoardStatus(testStat)
-    print printPrettyBoard(boardStatus)
-    print getConfictCells(boardStatus)
+    printPrettyBoard2(boardStatus)
+    print getBoardArray(boardStatus)
+    pass 
+    confictCells, confictCount = getConfictCells(boardStatus)
+    print confictCells
+    print confictCount
+    step=0
+    while step<1000 and confictCount!=0:
+        nextMinStat,nextMinCount=getNextMin(testStat)
+        printPrettyBoard2(nextMinStat)
+        testStat=nextMinStat
+        confictCount=nextMinCount
+        step=step+1
+    print step
+    print nextMinStat
+    print nextMinCount
+    
