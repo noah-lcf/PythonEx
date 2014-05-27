@@ -1,3 +1,15 @@
+
+# encoding: utf-8 
+'''
+Created on 2013年12月18日
+
+@author: NOAH
+
+骆峰式转换字符串
+
+'''
+
+
 def toCamal(str):
 	a=str.lower()
 	index=a.find("_");

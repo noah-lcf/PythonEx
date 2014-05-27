@@ -2,6 +2,7 @@
 __author__ = 'NOAH'
 
 
+
 def compare(filePath1, filePath2):
     """比较文件两个文件，输出没有重复的行 """
     f1 = open(filePath1, "r")

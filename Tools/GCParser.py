@@ -3,6 +3,8 @@
 Created on 2013年12月18日
 
 @author: NOAH
+
+java gc日志转格式
 '''
 
 
