@@ -1,5 +1,6 @@
 # coding: UTF-8
 # 求解八码游戏 A*算法 练习
+#test commit
 __author__ = 'Noah'
 
 import numpy as np
