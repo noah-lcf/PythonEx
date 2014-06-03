@@ -45,8 +45,7 @@ s = requests.Session()
 def clearImage():
 	pic_files = glob.glob(save_path + '//*.png')
 # 	print "find "+str(len(pic_files))+" images"
-	for f in pic_files:
-		os.remove(f)
+    map(os.remove,pic_files)
 	
 def init(use_proxy=False, clear_image=True):
 	if clear_image:clearImage()

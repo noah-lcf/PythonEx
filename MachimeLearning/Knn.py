@@ -1,12 +1,19 @@
-# coding: UTF-8
+﻿# coding: UTF-8
 __author__ = 'Noah'
 from numpy import *
 import operator
 """
-  机器学习实战第一章的列子,加了一些地方的注释，最后有与scipy现成算法的一个比较--scipy正确性要高
+
+  http://scikit-learn.org/stable/modules/neighbors.html
+  http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+
+  机器学习实战第2章的列子-K邻近算法
+
+  加了一些地方的注释，最后有与scipy现成算法的一个比较--scipy正确性要高
   
   优势：
-  简单有效 
+  精度高，异常值不敏感，无数据输入假定
+
   
 
 
@@ -16,6 +23,8 @@ import operator
   必须计算每个点的距离 ，耗时（scipy 会构建KD-tree或ball-tree，缩小搜索范围 Todo:kd-tree ball-tree区别？）
   无法给点数据的基础结构信息
 
+  适用数据范围：
+  数值型和标称型  
 
 
 """
@@ -28,10 +37,14 @@ def createDataSet():
 #计算所有点与当前点的欧式距离，返回最近顺序为K的样本的类别（其实这里可以直接返回最小）
 def classify0(inX, dataSet, labels, k):
     """
+    Parameters
+    ----------
+
     inX:待分类向量
     dataSet:全部样本
     lables:全部样本标签
     k:返回最近顺序为K的样本类别
+    
     """
     dataSetSize = dataSet.shape[0]
     diffMat = tile(inX, (dataSetSize, 1)) - dataSet

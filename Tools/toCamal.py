@@ -12,7 +12,7 @@ Created on 2013年12月18日
 
 def toCamal(str):
 	a=str.lower()
-	index=a.find("_");
+	index=a.find("_")
 	return a if index==-1 else a[0:index]+a[index+1].upper()+toCamal(a[index+2:len(a)])
 
 if __name__ == '__main__':	

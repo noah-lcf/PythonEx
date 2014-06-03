@@ -48,9 +48,5 @@ def correct(word):
 if __name__ == '__main__':
     a = {1, 2, 3}
     b = {3, 5, 6}
-    c = {}
-    print type(a)
-    print type(b)
-    print type(c)
     print a & b,
     print correct("spel")
