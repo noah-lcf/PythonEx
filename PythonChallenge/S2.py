@@ -17,7 +17,7 @@ dictTo = "cdefghijklmnopqrstuvwxyzab"
 table=string.maketrans(dict,dictTo)
 
 def decode(word):
-    decoded = ""
+    decoded = ""tradeSpider.py
     for char in word:
         match = False
         for i in range(0, len(dict)):

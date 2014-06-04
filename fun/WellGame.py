@@ -1,4 +1,5 @@
 # coding: UTF-8
+# coding: UTF-8
 #练习：井字游戏
 __author__ = 'Noah'
 
