@@ -1,10 +1,18 @@
-#! /usr/bin/env python
+#!/usr/bin/python
+# coding: UTF-8
 
-http://www.cnblogs.com/wentingtu/archive/2012/05/23/2514776.html
+#http://www.cnblogs.com/wentingtu/archive/2012/05/23/2514776.html
+
+
 
 """
 This code demostrates how easy to imprement an object orientated system on a functional programming language.
 It only requires a nested hash table.
+
+用function模拟类
+
+注意这里有传送function并存在一个DICT的用法
+
 """
 
 
