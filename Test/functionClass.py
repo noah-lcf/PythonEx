@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+http://www.cnblogs.com/wentingtu/archive/2012/05/23/2514776.html
+
 """
 This code demostrates how easy to imprement an object orientated system on a functional programming language.
 It only requires a nested hash table.
