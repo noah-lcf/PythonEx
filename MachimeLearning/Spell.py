@@ -39,7 +39,7 @@ def known(words):
 
 
 def correct(word):
-    candidates = known([word]) or known(edits1(word)) or known_edits2(word) or [word]
+    candidates = known([word]) or known(edits1(word)) or known_edits2(word) or [word]X
     for a in candidates:
         print a + ":" + `NWORDS[a]`
     return max(candidates, key=NWORDS.get)
