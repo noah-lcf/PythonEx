@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding: UTF-8
 """
-  hive MR嵌入脚本，统计轨迹中每天每个小时内用了多久
+  hive MR嵌入脚本，计算两点之间距离
   
 """
 import sys,os,time
