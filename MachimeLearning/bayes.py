@@ -3,6 +3,7 @@
 
 从数据本身获得结论，不考虑逻辑推理和先验知识
 
+http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/
 
 标称型数据，常用如垃圾邮件，拼写纠正
 
