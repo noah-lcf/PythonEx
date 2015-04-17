@@ -8,8 +8,6 @@ java gc日志转格式
 
 '''
 
-
-
 #!/usr/bin/env python  
    
 import sys, os, datetime  
